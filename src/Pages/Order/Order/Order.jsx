@@ -15,18 +15,15 @@ const Order = () => {
     const {category} = useParams();
     const initialIndex = categories.indexOf(category);
     const [tabIndex, setTabIndex] = useState(initialIndex);
-
     const [menu] = useMenu();
-    
+   
 
     const dessert = menu.filter(item => item.category === 'dessert')
     const pizza = menu.filter(item => item.category === 'pizza')
     const soup = menu.filter(item => item.category === 'soup')
     const salad = menu.filter(item => item.category === 'salad')
-    const offered = menu.filter(item => item.category === 'offered')
-
-
-
+  
+   
 
   return (
     <div>
