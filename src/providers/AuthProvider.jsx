@@ -54,6 +54,13 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       // console.log('current user', currentUser);
+      if(currentUser){
+        // get token and store client information
+
+      }else{
+        // remove token and store client information
+        
+      }
       setLoading(false);
     });
     return () => {

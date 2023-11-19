@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const SignUp = () => {
   const axiosPublic = useAxiosPublic();
@@ -22,7 +23,7 @@ const SignUp = () => {
    
     createUser(data.email, data.password)
       .then((result) => {
-       
+       console.log(result.user)
         updateUserProfile(data.name, data.photoURL)
           .then(() => {
             const userInfo ={
@@ -175,11 +176,12 @@ const SignUp = () => {
                 />
               </div>
             </form>
-            <p>
+            <p className="px-6 pb-2">
               <small>
                 New Here? <Link to="/login">Already an Account</Link>
               </small>
             </p>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>
